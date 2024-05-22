@@ -1,7 +1,6 @@
 package com.example.luis.luis;
 import org.springframework.web.bind.annotation.RestController;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,9 +34,9 @@ public class LuisController
 
     @DeleteMapping("/{nombre_cliente}")
     @Operation(summary = "Eliminar las citas por el nombre")
-    public luisReservacionEntity deleteluisReservacionEntityByName(@PathVariable("nombre_cliente") String nombre_cliente){
-        return LuisService.deleteluisReservacionEntityByName(nombre_cliente);
-    }
+        public void deleteluisReservacionEntityByName(@PathVariable("nombre_cliente") String nombre_cliente) {
+        luisService.deleteluisReservacionEntityByName(nombre_cliente);
+}
 
 
 

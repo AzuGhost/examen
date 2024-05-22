@@ -22,8 +22,7 @@ public class LuisService
       return (List<luisReservacionEntity>) luisRepository.findAll();       
   }
   @Transactional
-  public static luisReservacionEntity deleteluisReservacionEntityByName(String nombre_cliente){
-      LuisRepository.deletereluisReservacionEntityByName(nombre_cliente);
-      return null;
-  }
+public void deleteluisReservacionEntityByName(String nombre_cliente) {
+    luisRepository.deletereluisReservacionEntityByName(nombre_cliente);
+}
 }
