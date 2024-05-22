@@ -27,14 +27,14 @@ public class LuisController
     }
 
     @GetMapping("/citas")
-    @Operation(summary = "LLamar a todos los Producto")
+    @Operation(summary = "LLamar a todos los citas")
 
     public List<luisReservacionEntity> findAll() {
         return luisService.findAll();
     }
 
     @DeleteMapping("/{nombre_cliente}")
-    @Operation(summary = "Eliminar los productos por el nombre")
+    @Operation(summary = "Eliminar las citas por el nombre")
     public luisReservacionEntity deleteluisReservacionEntityByName(@PathVariable("nombre_cliente") String nombre_cliente){
         return LuisService.deleteluisReservacionEntityByName(nombre_cliente);
     }
