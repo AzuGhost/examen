@@ -4,27 +4,70 @@
 imagen swagger 
 ![alt text](image.png)
 
-metodo GET
-http://localhost:9017/api/citas/citas
+link swagger http://localhost:9017/swagger-ui/index.html
 
-![alt text](image-2.png)
-![alt text](image-3.png)
 
-metodo POST
+reservaciones
 
-  {
-  "numero_habitacion": 5,
-  "fecha_ingreso": "2024-05-22T04:29:42.725Z",
-  "disponible": true,
-  "nombre_cliente": "prueba2"
-  }
+GET consulta todas las reservaciones
+http://localhost:9017/api/reservaciones/ver
 
-![alt text](image-1.png)
-![alt text](image-4.png)
+GET consulta por ID
+http://localhost:9017/api/reservaciones/4
 
-metodo DELETE
-http://localhost:9017/api/citas/prueba
+POST agregar una reservacion
+http://localhost:9017/api/reservaciones/
 
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-7.png)
+{
+    "numero_habitacion": 101,
+    "fecha_ingreso": "2024-06-01",
+    "disponible": true,
+    "nombre_cliente": "Juan Pérez",
+    "hotel": {
+        "id": 5
+    }
+}
+
+PUT actualizar una reservacion
+http://localhost:9017/api/reservaciones/10
+{
+    "numero_habitacion": 101,
+    "fecha_ingreso": "2024-06-01",
+    "disponible": true,
+    "nombre_cliente": "Juan Pérez",
+    "hotel": {
+        "id": 5
+    }
+}
+
+DELETE http://localhost:9017/api/reservaciones/10
+
+
+hoteles
+
+GET cosulta todos los hoteles
+http://localhost:9017/api/hoteles
+
+GET consulta hoteles por ID
+http://localhost:9017/api/hoteles/2
+
+POST para hoteles
+http://localhost:9017/api/hoteles
+
+{
+  "nombre": "Hotel Quito",
+  "direccion": "Av. Amazonas y Patria",
+  "estrellas": 4
+}
+
+PUT actualizar hoteles
+http://localhost:9017/api/hoteles/2
+
+{
+  "nombre": "prueba",
+  "direccion": "Av. Amazonas y Patria",
+  "estrellas": 4
+}
+
+DELETE para eliminar hoteles
+http://localhost:9017/api/hoteles/2
