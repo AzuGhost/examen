@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/hoteles")
-public class HotelController {
+public class luisHotelController {
 
     @Autowired
-    private HotelService service;
+    private luisHotelService service;
 
     @GetMapping
-    public List<Hotel> getAllHoteles() {
+    public List<luisHotel> getAllHoteles() {
         return service.getAllHoteles();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Hotel> getHotelById(@PathVariable Long id) {
-        Optional<Hotel> hotel = service.getHotelById(id);
+    public ResponseEntity<luisHotel> getHotelById(@PathVariable Long id) {
+        Optional<luisHotel> hotel = service.getHotelById(id);
         if (hotel.isPresent()) {
             return ResponseEntity.ok(hotel.get());
         } else {
@@ -29,15 +29,15 @@ public class HotelController {
     }
 
     @PostMapping
-    public Hotel createHotel(@RequestBody Hotel hotel) {
+    public luisHotel createHotel(@RequestBody luisHotel hotel) {
         return service.saveHotel(hotel);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Hotel> updateHotel(@PathVariable Long id, @RequestBody Hotel hotelDetails) {
-        Optional<Hotel> optionalHotel = service.getHotelById(id);
+    public ResponseEntity<luisHotel> updateHotel(@PathVariable Long id, @RequestBody luisHotel hotelDetails) {
+        Optional<luisHotel> optionalHotel = service.getHotelById(id);
         if (optionalHotel.isPresent()) {
-            Hotel hotel = optionalHotel.get();
+            luisHotel hotel = optionalHotel.get();
             hotel.setNombre(hotelDetails.getNombre());
             hotel.setDireccion(hotelDetails.getDireccion());
             hotel.setEstrellas(hotelDetails.getEstrellas());
@@ -49,7 +49,7 @@ public class HotelController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteHotel(@PathVariable Long id) {
-        Optional<Hotel> hotel = service.getHotelById(id);
+        Optional<luisHotel> hotel = service.getHotelById(id);
         if (hotel.isPresent()) {
             service.deleteHotel(id);
             return ResponseEntity.noContent().build();

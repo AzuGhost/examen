@@ -6,20 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class HotelService {
+public class luisHotelService {
 
     @Autowired
-    private HotelRepository repository;
+    private luisHotelRepository repository;
 
-    public List<Hotel> getAllHoteles() {
+    public List<luisHotel> getAllHoteles() {
         return repository.findAll();
     }
 
-    public Optional<Hotel> getHotelById(Long id) {
+    public Optional<luisHotel> getHotelById(Long id) {
         return repository.findById(id);
     }
 
-    public Hotel saveHotel(Hotel hotel) {
+    public luisHotel saveHotel(luisHotel hotel) {
         return repository.save(hotel);
     }
 

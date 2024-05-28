@@ -2,7 +2,7 @@ package com.example.luis.luis;
 
 import java.sql.Date;
 
-import com.example.luis.hotel_luis.Hotel;
+import com.example.luis.hotel_luis.luisHotel;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,5 +26,5 @@ public class luisReservacionEntity {
     private String nombre_cliente;
 
     @ManyToOne
-    private Hotel hotel;
+    private luisHotel hotel;
 }
